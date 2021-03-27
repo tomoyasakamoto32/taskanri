@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <a class="btn btn-primary btn-lg btn-block" href='#'>課題を登録する</a>
+      <a class="btn btn-primary btn-lg btn-block" href='create'>課題を登録する</a>
     </div>
   </div>
   <div class="row">

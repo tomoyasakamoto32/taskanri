@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'tasks', 'middleware' => 'auth'], function(){
     Route::get('index', 'TaskController@index')->name('index');
+    Route::get('create', 'TaskController@create')->name('create');
 });
 
 Auth::routes();
