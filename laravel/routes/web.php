@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('top');
 });
 
+Route::group(['prefix' => 'tasks', 'middleware' => 'auth'], function(){
+    Route::get('index', 'TaskController@index')->name('index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
