@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -17,31 +18,12 @@
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
+                margin-top: 10vh;
             }
 
             .content {
                 text-align: center;
+                margin-top: 15vh;
             }
 
             .title {
@@ -61,29 +43,39 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .col-6 {
+              text-align: center;
+              font-size:5vw;
+            }
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+        <div class="container">
 
             <div class="content">
                 <div class="title m-b-md">
                     taskanri
                 </div>
             </div>
+
+            @if (Route::has('login'))
+                <div class="row">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                      <div class="col-6">
+                        <a class="btn btn-primary btn-lg btn-block" href="{{ route('login') }}">ログイン</a>
+                      </div>
+
+                        @if (Route::has('register'))
+                          <div class="col-6">
+                            <a class="btn btn-primary btn-lg btn-block" href="{{ route('register') }}">新規登録</a>
+                          </div>
+                        @endif
+                    @endauth
+                </div>
+            @endif
         </div>
     </body>
 </html>
