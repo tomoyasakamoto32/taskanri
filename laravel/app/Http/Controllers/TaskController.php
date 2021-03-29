@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
+
+use App\Models\Task;
+
+use Illuminate\Support\Facades\DB;
+
 
 class TaskController extends Controller
 {
@@ -13,7 +20,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('tasks.index');
+        $user_id = Auth::id();
+        $tasks = DB::table('tasks')->where('user_id', $user_id)->get();
+        return view('tasks.index', compact('tasks'));
     }
 
     /**
@@ -34,7 +43,17 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $task = new Task;
+    
+      $task->class_name = $request->input('class_name');
+      $task->task_format = $request->input('task_format');
+      $task->deadline = $request->input('deadline');
+      $task->detail = $request->input('detail');
+      $task->user_id = $request->user()->id;
+
+      $task->save();
+
+      return redirect('tasks/index');
     }
 
     /**

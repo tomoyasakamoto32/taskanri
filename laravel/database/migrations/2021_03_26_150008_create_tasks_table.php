@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->bigIncrements('id');
             $table->string('class_name', 50);
             $table->tinyInteger('task_format');
-            $table->string('deadline');
+            $table->string('deadline', 100);
             $table->string('detail', 1000);
             $table->timestamps();
         });
