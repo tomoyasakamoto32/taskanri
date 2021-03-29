@@ -26,16 +26,31 @@
   </div>
 
   <form method="GET" action="{{ route('edit', ['id' => $task->id]) }}">
+  @csrf
     <div class="row">
     <input class="btn btn-primary btn-lg btn-block" type="submit" value="変更する">
     </div>
   </form>
 
-  <form method="POST" action="#">
+  <form method="POST" action="{{ route('destroy', ['id' => $task->id]) }}" id="delete_{{ $task->id }}">
+  @csrf
     <div class="row">
-      <button type="button" class="btn btn-secondary btn-lg btn-block">削除する</button>
+      <a href="#" class="btn btn-secondary btn-lg btn-block" data-id="{{ $task->id }}" onclick="deletePost(this);">削除する</a>
     </div>
   </form>
 
 </div>
+
+
+<script>
+
+function deletePost(e) {
+   'use strict';
+   if (confirm('本当に削除していいですか？')) {
+     document.getElementById('delete_' + e.dataset.id).submit()
+   }
+}
+
+</script>
+
 @endsection
