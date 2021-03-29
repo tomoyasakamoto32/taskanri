@@ -22,6 +22,7 @@ Route::group(['prefix' => 'tasks', 'middleware' => 'auth'], function(){
     Route::get('create', 'TaskController@create')->name('create');
     Route::post('store', 'TaskController@store')->name('store');
     Route::get('show/{id}', 'TaskController@show')->name('show');
+    Route::get('edit/{id}', 'TaskController@edit')->name('edit');
 });
 
 Auth::routes();

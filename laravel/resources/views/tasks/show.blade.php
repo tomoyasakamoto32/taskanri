@@ -25,9 +25,9 @@
     </table>
   </div>
 
-  <form method="GET" action="#">
+  <form method="GET" action="{{ route('edit', ['id' => $task->id]) }}">
     <div class="row">
-    <button type="button" class="btn btn-primary btn-lg btn-block">編集する</button>
+    <input class="btn btn-primary btn-lg btn-block" type="submit" value="変更する">
     </div>
   </form>
 
