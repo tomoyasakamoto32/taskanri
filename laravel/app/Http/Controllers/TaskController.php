@@ -89,7 +89,18 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+      $task = Task::find($id);
+
+      $task->class_name = $request->input('class_name');
+      $task->task_format = $request->input('task_format');
+      $task->deadline = $request->input('deadline');
+      $task->detail = $request->input('detail');
+      $task->user_id = $request->user()->id;
+
+      $task->save();
+
+      return redirect('tasks/index');
     }
 
     /**

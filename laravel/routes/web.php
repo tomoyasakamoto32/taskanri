@@ -23,6 +23,8 @@ Route::group(['prefix' => 'tasks', 'middleware' => 'auth'], function(){
     Route::post('store', 'TaskController@store')->name('store');
     Route::get('show/{id}', 'TaskController@show')->name('show');
     Route::get('edit/{id}', 'TaskController@edit')->name('edit');
+    Route::post('update/{id}', 'TaskController@update')->name('update');
+    Route::post('destroy/{id}', 'TaskController@destroy')->name('destroy');
 });
 
 Auth::routes();

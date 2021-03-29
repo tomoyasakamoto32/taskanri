@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <form method="POST" action="{{ route('store') }}">
+      <form method="POST" action="{{ route('update', ['id' => $task->id]) }}">
       @csrf
         <div class="form-group">
           <label for="InputClassName">講義名</label>
