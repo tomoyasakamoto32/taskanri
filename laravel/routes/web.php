@@ -25,6 +25,7 @@ Route::group(['prefix' => 'tasks', 'middleware' => 'auth'], function(){
     Route::get('edit/{id}', 'TaskController@edit')->name('edit');
     Route::post('update/{id}', 'TaskController@update')->name('update');
     Route::post('destroy/{id}', 'TaskController@destroy')->name('destroy');
+    Route::get('category/{id}', 'TaskController@category')->name('category');
 });
 
 Auth::routes();

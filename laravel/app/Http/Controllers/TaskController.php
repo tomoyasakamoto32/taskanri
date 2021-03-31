@@ -27,7 +27,6 @@ class TaskController extends Controller
 
         $query = DB::table('tasks')->where('user_id', $user_id);
 
-
         if($search !== null){
             $search_split = mb_convert_kana($search,'s');
 
@@ -137,5 +136,13 @@ class TaskController extends Controller
         $task->delete();
 
         return redirect('tasks/index');
+    }
+
+    public function category($id)
+    {
+        $user_id = Auth::id();
+
+        $tasks =  DB::table('tasks')->where('task_format', $id)->where('user_id', $user_id)->get();
+        return view('tasks.category', compact('tasks'));
     }
 }

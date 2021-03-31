@@ -17,11 +17,11 @@
   </div>
   <div class="row">
     <div class="col">
-      <a class="task" href="category/1">レポート</a>
-      <a class="task_format" href="category/2">テスト</a>
-      <a class="task_format" href="category/3">プレゼンテーション</a>
-      <a class="task_format" href="category/4">小テスト</a>
-      <a class="task_format" href="category/5">実技</a>
+      <a class="task" href="1">レポート</a>
+      <a class="task_format" href="2">テスト</a>
+      <a class="task_format" href="3">プレゼンテーション</a>
+      <a class="task_format" href="4">小テスト</a>
+      <a class="task_format" href="5">実技</a>
     </div>
   </div>
   <div class="row">
