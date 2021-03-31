@@ -11,7 +11,7 @@
         </tr>
         <tr>
           <th scope="row">課題形式</th>
-          <td>{{ $task->task_format }}</td>
+          <td>{{ $task_format }}</td>
         </tr>
         <tr>
           <th scope="row">提出期限 or 実施日時</th>
@@ -27,9 +27,9 @@
 
   <form method="GET" action="{{ route('edit', ['id' => $task->id]) }}">
   @csrf
-    <div class="row">
+  <div class="row">
     <input class="btn btn-primary btn-lg btn-block" type="submit" value="変更する">
-    </div>
+  </div>
   </form>
 
   <form method="POST" action="{{ route('destroy', ['id' => $task->id]) }}" id="delete_{{ $task->id }}">
@@ -38,6 +38,12 @@
       <a href="#" class="btn btn-secondary btn-lg btn-block" data-id="{{ $task->id }}" onclick="deletePost(this);">削除する</a>
     </div>
   </form>
+
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-success btn-lg btn-block" href="{{ route('index') }}">戻る</a>
+    </div>
+  </div>
 
 </div>
 

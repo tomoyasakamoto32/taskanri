@@ -26,10 +26,10 @@
           <input type="text" class="form-control" id="InputDeadLine" placeholder="100文字以内" name="deadline">
         </div>
         <div class="form-group">
-          <label for="FormControlTextarea1">課題詳細</label>
+          <label for="FormControlTextarea1">課題・テスト詳細</label>
           <textarea class="form-control" id="FormControlTextarea1" rows="3" placeholder="1000文字以内" name="detail"></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">課題を登録</button>
+        <button type="submit" class="btn btn-primary">課題・テストを登録</button>
       </form>
     </div>
   </div>
