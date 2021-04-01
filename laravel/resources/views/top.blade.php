@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background-color: #f8fafc;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -48,6 +48,10 @@
               text-align: center;
               font-size:5vw;
             }
+
+            .subtitle {
+              font-size:2vw;
+            }
         </style>
     </head>
     <body>
@@ -57,6 +61,7 @@
                 <div class="title m-b-md">
                     taskanri
                 </div>
+                <div class="subtitle">taskanriは大学生向けの課題管理アプリケーションです</div>
             </div>
 
             @if (Route::has('login'))
